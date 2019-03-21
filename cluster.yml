@@ -1,0 +1,7 @@
+nodes:
+  - address: <your_ip>
+    user: root
+    ssh_key_path: <your_ssh_path>
+    role: [controlplane,worker,etcd]
+
+ignore_docker_version: true
