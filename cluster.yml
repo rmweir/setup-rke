@@ -1,7 +1,18 @@
 nodes:
-  - address: <your_ip>
+  - address: ip1
     user: root
-    ssh_key_path: <your_ssh_path>
+    ssh_key_path: key1
     role: [controlplane,worker,etcd]
-
-ignore_docker_version: true
+  - address: ip2
+    user: root
+    ssh_key_path: key2
+    role: [controlplane,worker,etcd]
+  - address: ip3
+    user: root
+    ssh_key_path: key3
+    role: [controlplane,worker,etcd]
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
